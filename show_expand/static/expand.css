@@ -1,0 +1,108 @@
+:root {
+  --width: 320px;
+  --height: 540px;
+  --distance: 10px;
+  --bg-color: #252525;
+  --item-color: #353535;
+  --item-color-selected: #292929;
+  --text-color: #fefefe;
+  --text-underline: #afafaf;
+  --box-shadow: 2px 2px var(--distance) var(--text-color),
+    -2px 2px var(--distance) var(--text-color);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color);
+}
+.show-expand {
+  text-align: justify;
+  color: var(--text-color);
+}
+
+.expand-item {
+  width: min(var(--width));
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 40;
+}
+
+.expand-item h1 {
+  border-bottom: 1px solid var(--text-underline);
+  text-align: center;
+  margin: calc(var(--distance) / 2) 0;
+}
+.expand-item-container {
+  height: var(--height);
+  background-color: var(--item-color);
+  border: 1px solid var(--text-underline);
+  border-radius: var(--distance);
+  padding: var(--distance);
+  margin: var(--distance) auto;
+  transition-duration: 0.3s;
+}
+.expand--active {
+  display: initial !important;
+  margin: auto;
+  width: calc(var(--width) * 2);
+}
+.expand--active > div {
+  background-color: var(--item-color-selected);
+  box-shadow: var(--box-shadow);
+}
+.--active{
+    z-index: 50;
+}
+.show-buttons {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.show-buttons button {
+  width: 25%;
+  height: 100%;
+  border: none;
+  background: no-repeat url("/static/arrow.png") center;
+}
+.show-buttons button:first-child {
+  transform: rotate(180deg);
+}
+.show-buttons button:hover {
+  background-color: var(--item-color);
+  opacity: 0.3;
+}
+.show-buttons button:active {
+  opacity: 0.6;
+}
+
+@media screen and (width>700px) {
+  .show-expand {
+    position: relative;
+    width: 100%;
+    height: calc(10px + var(--height));
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  .expand-item {
+    position: inherit;
+    cursor: pointer;
+    margin: 0 var(--distance);
+  }
+  .expand-item-container:hover {
+    box-shadow: var(--box-shadow);
+  }
+  .show-buttons {
+    display: none;
+  }
+}
