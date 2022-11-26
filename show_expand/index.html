@@ -1,37 +1,166 @@
-<!-- Import CSS -->
-<link rel="stylesheet" href="/static/expand.css">
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- HTML Code -->
-<div class="show-expand">
-    <div class="expand-item --active">
-        <div class="expand-item-container">
-            <h1>Titulo item 1</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum odio fugiat, dolor molestias corporis eius nulla tempore cumque consequuntur alias! Ad aliquam eaque quibusdam. Eos incidunt quaerat reprehenderit sapiente deserunt!</p>
-        </div>
-    </div>
-    <div class="expand-item">
-        <div class="expand-item-container">
-            <h1>Titulo item 2</h1>
-  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum odio fugiat, dolor molestias corporis eius nulla tempore cumque consequuntur alias! Ad aliquam eaque quibusdam. Eos incidunt quaerat reprehenderit sapiente deserunt!</p>
-        </div>
-    </div>
-    <div class="expand-item">
-        <div class="expand-item-container">
-            <h1>Titulo item 3</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum odio fugiat, dolor molestias corporis eius nulla tempore cumque consequuntur alias! Ad aliquam eaque quibusdam. Eos incidunt quaerat reprehenderit sapiente deserunt!</p>
-        </div>
-    </div>
-    <div class="expand-item">
-        <div class="expand-item-container">
-            <h1>Titulo item 4</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum odio fugiat, dolor molestias corporis eius nulla tempore cumque consequuntur alias! Ad aliquam eaque quibusdam. Eos incidunt quaerat reprehenderit sapiente deserunt!</p>
-        </div>
-    </div>
-</div>
-<div class="show-buttons">
-    <button type="button" id="btn-prev"></button>
-    <button type="button" id="btn-next"></button>
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show expand items</title>
+</head>
 
-<!-- Import Javascript -->
-<script src="/static/expand.js"></script>
+<body>
+    <h1>Show Expand Items</h1>
+    <div class="container">
+        <div>
+            <h2 style="text-align: center;">Explanation</h2>
+            <p>To insert a Show expand item, first need import <b>CSS</b> and <b>Javascript</b> files.</p>
+            <p class="emphasis">To import Styles:</p>
+            <p class="muted">&lt;link rel="stylesheet" href="/static/expand.css"&gt;</p>
+            <p class="emphasis">To import Javascript:</p>
+            <p class="muted">&lt;script src="/static/expand.js"&gt;</p>
+            <p> Now, to add and use this, you need create a <b>div</b> container with class <b>"show-expand"</b></p>
+            <p>The childs are <b>div</b> elemtns with class <b>"expand-item"</b> and first item add <b>"--active"</b>,
+            </p>
+            <p>into this element create a new <b>div</b> with class <b>"expand-item-container"</b> and in here you can
+            </p>
+            <p>insert your content.</p>
+            <div class="container">
+                <button id="clickme">Click me to show</button>
+            </div>
+        </div>
+        <div class="code">
+            <h2 style="text-align: center;">Code</h2>
+            <pre id="code"></pre>
+        </div>
+    </div>
+    <iframe id="show" src="/code.html" frameborder="0"></iframe>
+    <style>
+        *::-webkit-scrollbar {
+            background-color: #212132;
+            border-radius: 5px;
+            width: 5px;
+            height: 5px;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: #767676;
+            border-radius: 5px;
+
+        }
+
+        body {
+            background: #191932;
+            color: #fff;
+            border-bottom: 1px solid;
+            margin: 0;
+            padding-bottom: 35px;
+        }
+
+        h1 {
+            border-bottom: 1px solid;
+            padding-bottom: 16px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+
+        button {
+            position: relative;
+            margin: auto;
+            width: 45%;
+            font-size: 16px;
+            padding: 16px 32px;
+            color: #fff;
+            background-color: #191932;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #212132;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .emphasis {
+            font-weight: 800;
+            padding-left: 8px;
+        }
+
+        .muted {
+            color: #aaa;
+            text-align: center;
+        }
+
+        .showme {
+            display: initial !important;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .upButton::after {
+            content: 'Exit';
+            position: fixed;
+            width: fit-content;
+            left: 0;
+            right: 0;
+            bottom: 40px;
+            z-index: 15;
+            margin: 0 auto;
+            padding: 16px 32px;
+            background-color: #191932;
+            color: #fff;
+            font-size: 16px;
+            border: 2px outset #767676;
+            transition-duration: .2s;
+        }
+
+        .upButton:hover::after {
+            background-color: #212132;
+        }
+
+        .upButton:active::after {
+            border-style: inset;
+        }
+
+        .code {
+            width: 90%;
+            max-width: 650px;
+            height: 450px;
+        }
+
+        .code pre {
+            width: 100%;
+            height: 80%;
+            overflow-y: scroll;
+            background-color: #121230;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        const $ = (selector) => document.querySelector(selector);
+        let code = $('#code')
+        let iframe = $('#show');
+        let btn = $('#clickme');
+        btn.addEventListener('click', event => { iframe.classList.toggle('showme'), btn.classList.toggle('upButton') });
+        var chargeCode = () => {
+            let resp = new XMLHttpRequest();
+            resp.open('GET', 'code.html', false), resp.send(null);
+            return resp.responseText
+        };
+        code.innerText = chargeCode()
+    </script>
+</body>
+
+</html>

@@ -32,6 +32,7 @@ html {
   right: 0;
   margin: 0 auto;
   z-index: 40;
+  opacity: 0;
 }
 
 .expand-item h1 {
@@ -58,6 +59,7 @@ html {
   box-shadow: var(--box-shadow);
 }
 .--active{
+  opacity: 1;
     z-index: 50;
 }
 .show-buttons {
@@ -98,6 +100,7 @@ html {
     position: inherit;
     cursor: pointer;
     margin: 0 var(--distance);
+    opacity: 1;
   }
   .expand-item-container:hover {
     box-shadow: var(--box-shadow);
