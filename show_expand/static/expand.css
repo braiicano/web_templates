@@ -74,7 +74,7 @@ html {
   width: 25%;
   height: 100%;
   border: none;
-  background: no-repeat url("/static/arrow.png") center;
+  background: no-repeat url("/show_expand/static/arrow.png") center;
 }
 .show-buttons button:first-child {
   transform: rotate(180deg);
