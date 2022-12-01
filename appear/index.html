@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Appear</title>
+</head>
+
+<body>
+    <div>
+        <h1 class="title">Appear</h1>
+        <div class="back"><a href="../index.html">
+                <h2>←</h2>
+            </a></div>
+    </div>
+    <div class="container">
+        <div>
+            <h2 class="text-center jump">Explanation</h2>
+            <p>To insert in your HTML, import next files:</p>
+            <p class="emphasis">To insert Styles</p>
+            <p class="muted">&lt;link rel="stylesheet" href="static/appear.css"&gt;</p>
+            <p class="emphasis">To insert Script</p>
+            <p class="muted">&lt;script src="static/appear.js"&gt;&lt;/script&gt;</p>
+            <p>To use create a <b>div</b> container with class <b>"appear_item"</b> and id <b>"appear-n"</b> where "n" is a number to identify</p>
+            <p>Inside create two elements, first element is the button to close windows</p>
+            <p class="emphasis">First child element:</p>
+            <p class="muted">&lt;button onclick="appear('#appear-n')"&gt;x&lt;/button&gt;</p>
+            <p>Second child element is a <b>div</b> container with class <b>"appear_content"</b> to insert your content in here.</p>
+            <p>Last, create the open button equal to first child element created</p>
+            <div class="container"><button id="clickme">Click me to show</button></div>
+        </div>
+        <code class="code">
+            <h2 class="text-center jump">Example code</h2>
+            <pre id="code"></pre>
+        </code>
+    </div>
+    <iframe src="code.html" frameborder="0" id="show"></iframe>
+    <script src="../static/script.js"></script>
+</body>
+
+</html>

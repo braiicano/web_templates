@@ -5,6 +5,7 @@ let btns = $("button");
 let lenListItems = listItems.length - 1;
 var active = 0;
 
+
 listItems.forEach((selectedItem) =>
   selectedItem.addEventListener("click", (event) => {
     selectedItem.classList.toggle("expand--active");

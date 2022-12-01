@@ -1,0 +1,77 @@
+:root {
+  --bg-color: #363421;
+  --text-color: #aaa;
+  --spacing: 16px;
+  --size: 16px;
+  --text-hover: #fff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  margin: var(--spacing);
+}
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #252525;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.appear_item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  visibility: hidden;
+  opacity: 0;
+  transition-property: visibility opacity;
+  transition-duration: 1s;
+  background: var(--bg-color);
+}
+.appear_item > .btn {
+  position: inherit;
+  top: 10%;
+  right: 10%;
+}
+.appear {
+  opacity: 1;
+  visibility: initial !important;
+  transition-property: visibility opacity;
+  transition-duration: 1s;
+}
+.appear-content{
+  min-width: 320px;
+  max-width: 1580px;
+}
+.btn {
+  height: calc(var(--size) * 4);
+}
+.btn > button {
+  font-size: calc(var(--size) * 1.5);
+  color: var(--text-color);
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.btn > button:hover {
+  color: var(--text-hover);
+}
+
+.text-center {
+  text-align: center;
+}
