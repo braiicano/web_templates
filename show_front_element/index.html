@@ -8,16 +8,21 @@
     <title>Show front element</title>
 </head>
 <body>
-    <h1>Show front element</h1>
+    <h1 class="title">Show front element</h1>
     <div class="container">
         <div>
-            <h2 style="text-align: center;">Explanation</h2>
+            <h2 class="text-center jump">Explanation</h2>
             <p>To insert a Show front element, first need import <b>CSS</b> and <b>Javascript</b> files.</p>
             <p class="emphasis">To insert Styles</p>
             <p class="muted">&lt;link rel="stylesheet" href="static/show_front_element.css"&gt;</p>
             <p class="emphasis">To insert Script</p>
             <p class="muted"></p>
             <p class="muted">&lt;script src="static/show_front_element.js"&gt;&lt;/script&gt;</p>
+            <p><b>How to use?</b></p>
+            <p>Easy, first create the element container with class <b>"front front_close"</b> to initialize</p>
+            <p>Next, create a button with event <i>"onclick"</i>, this call the function <b>"toggleFront('close')"</b></p>
+            <p>Create a new child element container with class <b>"front_content"</b> to insert your content bellow</p>
+            <p>Last step insert in your html body a button with event <i>"onclick"</i>, calling <b>"toggleFront('open')</b></p>
             <div class="container">
                 <button id="clickme">Click me to show</button>
             </div>

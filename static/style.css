@@ -1,3 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  list-style: none;
+  text-decoration: none;
+}
 *::-webkit-scrollbar {
   background-color: #212132;
   border-radius: 5px;
@@ -32,11 +39,15 @@ a {
 ul,li{
     list-style: none;
 }
+p{
+  padding: 8px 0;
+}
 .container {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 32px;
+  padding-top: 16px;
 }
 
 button {
@@ -123,7 +134,7 @@ iframe {
   right: 16px;
   width: 32px;
   height: 32px;
-  border: 1px solid #fff;
+  border: 1px outset #767676;
   border-radius: 16px;
   text-align: center;
   vertical-align: middle;
@@ -131,9 +142,69 @@ iframe {
 .back:hover {
   background-color: #212132;
 }
+.back:active{
+  border-style: inset;
+}
 .back:hover a {
   color: #fff;
 }
 .back a h2 {
   margin: 0;
+}
+
+.item{
+  width: calc(16px * 6);
+  height: calc(16px * 3);
+  border: 2px outset #767676;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 16px 32px;
+  color: #fff;
+  background-color: #191932;
+  cursor: pointer;
+}
+.item:hover{
+  background-color: #212132;
+}
+.item:active{
+  border-style: inset;
+}
+.item span {
+}
+
+
+
+
+
+/* General properties */
+/* Flex */
+.row{
+  flex-direction: row;
+}
+.column{
+  flex-direction: column;
+}
+
+/* Text */
+.text-center{
+  text-align: center;
+}
+.title{
+  padding-top: 20px;
+  height: 40px;
+}
+
+/* Spacing */
+.jump{
+  margin-bottom: 16px;
+}
+
+/* Sizing */
+.width{
+  width: auto;
+}
+.width-40{
+  width: 40%;
 }

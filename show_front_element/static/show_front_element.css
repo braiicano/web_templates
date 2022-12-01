@@ -1,0 +1,124 @@
+.example {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #252525;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-container button {
+  width: calc(16px * 6);
+  height: calc(16px * 3);
+  background-color: #191932;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-container button:hover {
+  background-color: #292949;
+}
+
+.front {
+  position: absolute;
+  top: 0;
+  background: linear-gradient(180deg, #121212 50%, transparent 50%);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #aaa;
+  visibility: hidden;
+}
+
+.front::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  /* right: 120vw; */
+  background-color: #121212;
+  width: 100%;
+  height: 50%;
+}
+.front button {
+  position: inherit;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  color: #aaa;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.front button:hover {
+    color: #fff;
+}
+
+.front_open {
+  --left-init: -120vw;
+  --left-end: 0;
+  animation-name: mid_open;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+.front_close {
+  --left-init: -120vw;
+  --left-end: 0;
+  animation-name: mid_close;
+  animation-duration: .8s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-delay: 1.2s;
+}
+.front_open::after {
+  --left-init: 240vw;
+  --left-end: 0;
+  animation-name: mid_open;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+.front_close::after {
+  --left-init: 240vw;
+  --left-end: 0;
+  animation-name: mid_close;
+  animation-duration: .8s;
+  animation-timing-function: ease-in;
+  animation-fill-mode:forwards;
+  animation-delay: .7s;
+}
+.front_open>.button+.front_content{
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-delay: 1.5s;
+}
+.front_close>.button+.front_content{
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .5s;
+}
+.front_content{
+    text-align: center;
+}
+@keyframes mid_open {
+  0% {
+    left: var(--left-init);
+  }
+  100% {
+    left: var(--left-end);
+  }
+}
+@keyframes mid_close {
+  0% {
+    left: var(--left-end);
+  }
+  100% {
+    left: var(--left-init);
+  }
+}
