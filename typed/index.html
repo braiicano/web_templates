@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/style.css">
+  <title>Typed effect</title>
+</head>
+
+<body>
+  <div>
+    <h1 class="title">Typed effect</h1>
+    <div class="back"><a href="../index.html">
+        <h2>←</h2>
+      </a></div>
+  </div>
+  <div class="container">
+    <div>
+      <h2 class="text-center jump">Explanation</h2>
+      <p>To insert effect element, need import <b>Javascript</b> file.</p>
+      <p>Now, to add and use this, you need create a <b>container</b> element  with id <b>"typed"</b>(default)</p>
+      <p>Also create a <b>js</b> file to import the <em>function</em></p>
+      <p>In your <b>js</b> file, import <b>"writeEffect"</b> with params:</p>
+      <p class="muted">element: first is the id to element to recive the effect</p>
+      <p class="muted">text: is a text list to write, can only major than 2 words</p>
+      <p class="muted">time: (optional), default time is optimized in 3 seconds</p>
+      <div class="container">
+        <button id="clickme">Click me to show</button>
+      </div>
+    </div>
+    <code class="code">
+      <h2 class="text-center jump">Example code</h2>
+      <pre id="code"></pre>
+    </code>
+  </div>
+  <iframe src="code.html" frameborder="0" id="show"></iframe>
+  <script src="../static/script.js"></script>
+</body>
+
+</html>
